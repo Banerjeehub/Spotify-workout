@@ -111,14 +111,14 @@ nav ul li {
     margin:0 15px;
 }
 
-@media screen and (min-width:450px) {
+@media screen and (min-width:350px) {
   .songInfo{
     margin-top: 75px;
-    margin-left: 55px;
+    margin-left: 35px;
   }
 
   .songItems{
-    width: 20rem;
+    width: 15rem;
   }
   
 }
