@@ -76,6 +76,8 @@ Array.from(document.getElementsByClassName("songState")).forEach((e) => {
     audioElement.currentTime = 0;
 
     // playbutton();
+    value = (Array.from(document.getElementsByClassName("songState"))[songIndex]);
+    console.log(songIndex);
 
     if (audioElement.paused && audioElement.currentTime <= 0) {
       audioElement.src = `songs/${songIndex}.mp3`;
@@ -146,7 +148,7 @@ const makeAllplay = () => {
 };
 
 document.getElementById("next").addEventListener("click", () => {
-  if (songIndex > 7) {
+  if (songIndex >= 7) {
     songIndex = 0;
   } else {
     songIndex += 1;
@@ -158,6 +160,8 @@ document.getElementById("next").addEventListener("click", () => {
   gif.style.opacity = 1;
   play.classList.remove("fa-circle-play");
   play.classList.add("fa-circle-pause");
+  makeAllStop();
+  makeAllplay();
 });
 
 document.getElementById("previous").addEventListener("click", () => {
@@ -174,6 +178,8 @@ document.getElementById("previous").addEventListener("click", () => {
   gif.style.opacity = 1;
   play.classList.remove("fa-circle-play");
   play.classList.add("fa-circle-pause");
+  makeAllStop();
+  makeAllplay();
 });
 
 document.getElementById("reload").addEventListener("click", () => {
