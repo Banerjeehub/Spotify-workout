@@ -43,7 +43,7 @@ nav ul li {
 
 .container {
   min-height: 72vh;
-  background-image: url('images/wrk.jpg');
+  background-image: url('wrk.jpg');
   min-width: 45vw;
   background-size:cover;
   font-family: 'Varela Round', sans-serif;
