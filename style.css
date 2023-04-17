@@ -10,6 +10,10 @@ body {
   margin: 0;
   padding: 0;
 }
+nav{
+  position: sticky;
+  top:0;
+}
 
 nav ul {
   display: flex;
@@ -39,7 +43,7 @@ nav ul li {
 
 .container {
   min-height: 72vh;
-  background-image: url('wrk.jpg');
+  background-image: url('images/wrk.jpg');
   min-width: 45vw;
   background-size:cover;
   font-family: 'Varela Round', sans-serif;
@@ -77,16 +81,21 @@ nav ul li {
 
 
 .bottom {
+  
   display: flex;
   background-color: black;
   color: rgb(255, 255, 255);
-  height: 131px;
+  height: 102px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: sticky;
+  bottom: 0;
 }
 #myProgressBar {
+
   width: 80vw;
+  cursor: pointer;
 }
 
 .icons{
