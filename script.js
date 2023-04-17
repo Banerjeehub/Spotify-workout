@@ -87,10 +87,8 @@ Array.from(document.getElementsByClassName("songState")).forEach((e) => {
       play.classList.remove("fa-circle-play");
       e.target.classList.add("fa-circle-pause");
       play.classList.add("fa-circle-pause");
-      console.log("play");
     } else {
       audioElement.pause();
-      console.log("pause");
       gif.style.opacity = 0;
       e.target.classList.remove("fa-circle-pause");
       play.classList.remove("fa-circle-pause");
@@ -106,6 +104,7 @@ play.addEventListener("click", () => {
     // tap.classList.add("fa-circle-pause");
 
     audioElement.play();
+    makeAllplay();
     onGoingSong.innerText = songs[songIndex].fileName;
     gif.style.opacity = 1;
     play.classList.remove("fa-circle-play");
@@ -114,6 +113,7 @@ play.addEventListener("click", () => {
     // tap.classList.add("fa-circle-play");
     // tap.classList.remove("fa-circle-pause");
     audioElement.pause();
+    makeAllStop();
     gif.style.opacity = 0;
     play.classList.remove("fa-circle-pause");
     play.classList.add("fa-circle-play");
@@ -139,8 +139,13 @@ const makeAllStop = () => {
   );
 };
 
+const makeAllplay = () => {
+  let arr = Array.from(document.getElementsByClassName("songState"))[songIndex];
+  arr.classList.remove("fa-circle-play");
+  arr.classList.add("fa-circle-pause");
+};
+
 document.getElementById("next").addEventListener("click", () => {
-  console.log("clicked");
   if (songIndex > 7) {
     songIndex = 0;
   } else {
